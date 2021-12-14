@@ -9,7 +9,7 @@ import { startregisterWithEmailPasswordName } from '../../actions/auth';
 export const RegisterPage = () => {
 
     const dispatch = useDispatch();
-    const { messageError } = useSelector(state => state.ui);
+    const { loading, messageError } = useSelector(state => state.ui);
 
     const [formValues, handleInputChange] = useForm({
         name: 'Ruiz',
@@ -114,6 +114,7 @@ export const RegisterPage = () => {
                 <button
                     type="submit"
                     className="btn btn-primary btn-block mb-5"
+                    disabled={loading}
                 >
                     Register
                 </button>
